@@ -10,6 +10,12 @@ let counter = 0;
 //console.log(number);
 
 addButton.addEventListener("click", function(){
+    if (isNaN(document.querySelector(".numInput").value)) {
+        numCounterDisplay.textContent = "ERROR: please enter number";
+        console.log(numCounterDisplay);
+        return;
+        
+    } else {
     let number = document.querySelector(".numInput").value;
     makeNum = Number(number);
     newNum = makeNum + counter;
@@ -17,28 +23,48 @@ addButton.addEventListener("click", function(){
     numCounterDisplay.textContent = Number(counter);
     console.log(counter);
     turnRed();
+    }
 });
 
 subButton.addEventListener("click", function(){
+    if (isNaN(document.querySelector(".numInput").value)) {
+        numCounterDisplay.textContent = "ERROR: please enter number";
+        console.log(numCounterDisplay);
+        return;
+        
+    } else {
     let number = document.querySelector(".numInput").value;
     makeNum = Number(number);
     newNum = counter - makeNum;
     counter = newNum;
     numCounterDisplay.textContent = Number(counter);
     turnRed();
-    // if (counter < 0){
-    //     console.log(numCounterDisplay);
-    //     numCounterDisplay.style.color = "red";
-    // } else {
-    //     numCounterDisplay.style.color = "black";
-    // }
+    }
 });
 
 let turnRed = () => {
+    
     if (counter < 0){
         console.log(numCounterDisplay);
         numCounterDisplay.style.color = "red";
     } else if (counter => 0) {
         numCounterDisplay.style.color = "black";
     }
+    
 };
+
+let checkNum = () => {
+    let number = document.querySelector(".numInput").value;
+    if(Number.isInteger(number) === false) {
+        let warningDiv = document.createElement("div");
+        warningDiv.classList.add("notANum");
+        warningDiv.textContent = "this is not number";
+        numDisplayWrapper.after(warningDiv);
+        
+    }
+    resetValue();
+};
+
+let resetValue = () => {
+    
+}
