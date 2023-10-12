@@ -1,0 +1,45 @@
+.wrapper {
+    max-width: 80%;
+    margin: 0 auto;
+}
+.countDisplay {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    justify-items: center;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 2.5em;
+
+}
+
+.counter {
+    grid-column: 1/4;
+    text-align: center;
+    padding: 10px;
+    font-size: 36px;
+}
+
+.add,
+.subtract {
+    padding: .25em 1em;
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: darkgray;
+}
+.add:hover, .subtract:hover{
+    padding: .25em 1em;
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 5px;
+    color: black;
+    background-color: lightgray;
+}
+.numInput {
+    width: 90%;
+    padding: 5px;
+    font-size: 2rem;
+}
